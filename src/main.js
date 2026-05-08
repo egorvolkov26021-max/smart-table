@@ -46,7 +46,7 @@ function render(action) {
     // @todo: использование
     result = applySorting(result, state, action);
     result = applyPagination(result, state, action);
-    result = initSearching(result, state, action);
+    result = applySeaching(result, state, action);
     result = applyFiltering(result, state, action);
     
     sampleTable.render(result)
