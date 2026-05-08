@@ -1,7 +1,7 @@
 import {rules, createComparison} from "../lib/compare.js";
 
 export function initSearching(searchField) {
-    // @todo: #5.1 — настроить компаратор
+  // @todo: #5.1 — настроить компаратор
   const compare = createComparison(
     ["skipEmptyTargetValues"],
     [
@@ -13,9 +13,9 @@ export function initSearching(searchField) {
     ],
   );
 
-    return (data, state, action) => {
-        // @todo: #5.2 — применить компаратор
+  return (data, state, action) => {
+    // @todo: #5.2 — применить компаратор
 
-        return compare(data);
-    }
+    return data.filter((row) => compare(row, state));
+  };
 }
