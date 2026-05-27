@@ -12,8 +12,20 @@ export function initFiltering(elements) {
 
     const applyFiltering = (query, state, action) => {
         // код с обработкой очистки поля
-         
 
+         console.log(query);
+         console.log(action);
+        if(action&&action.name === "reset"){
+             Object.keys(elements).forEach(key => {
+            if (elements[key]) 
+                { 
+                  elements[key].value="" ;
+            }
+        }); 
+        return query;
+            }
+            
+        
         // @todo: #4.5 — отфильтровать данные, используя компаратор
        
         const filter = {};

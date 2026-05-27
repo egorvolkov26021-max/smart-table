@@ -18,7 +18,7 @@ import {initFiltering} from "./components/filtering.js"
 
 
 // Исходные данные используемые в render()
-const api = initData(sourceData);
+const api = initData();
 
 /**
  * Сбор и обработка полей из таблицы
@@ -73,7 +73,8 @@ const {applyPagination, updatePagination} = initPagination(
         return el;
     }
 );
-const applySearching = initSearching(sampleTable.search.name);
+const applySearching = initSearching(sampleTable.search.elements.search.name);
+console.log(sampleTable);
 const applySorting = initSorting([        // Нам нужно передать сюда массив элементов, которые вызывают сортировку, чтобы изменять их визуальное представление
     sampleTable.header.elements.sortByDate,
     sampleTable.header.elements.sortByTotal
